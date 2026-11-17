@@ -1,0 +1,1 @@
+export function ToastContainer({message}){return message?<div role="status" className="fixed bottom-5 right-5 z-50 rounded-xl bg-slate-900 px-4 py-3 text-sm text-white shadow-xl">{message}</div>:null;}

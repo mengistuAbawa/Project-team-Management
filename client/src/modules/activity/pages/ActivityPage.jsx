@@ -1,0 +1,3 @@
+import { PageHeader } from '../../../components/layout/PageHeader.jsx';
+import { demoActivity } from '../../../data/mockData.js';
+export function ActivityPage(){return <><PageHeader title="Activity log" description="A timeline of important workspace actions."/><div className="panel divide-y divide-slate-100">{demoActivity.map(item=><div key={item.id} className="flex gap-4 p-5"><span className="mt-1 h-2.5 w-2.5 rounded-full bg-indigo-500"/><div><p className="text-sm text-slate-700"><strong>{item.actor}</strong> {item.action} <strong>{item.target}</strong></p><p className="mt-1 text-xs text-slate-400">{item.time}</p></div></div>)}</div></>;}

@@ -1,0 +1,1 @@
+export function MeetingForm({value,onChange}){return <div className="space-y-2">{['title','date','time','project'].map(k=><input key={k} className="form-input" placeholder={k} value={value[k]||''} onChange={e=>onChange({...value,[k]:e.target.value})}/>)}</div>;}

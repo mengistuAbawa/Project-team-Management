@@ -1,0 +1,3 @@
+import { TASK_STATUSES } from '../../../utils/constants.js';
+import { TaskCard } from './TaskCard.jsx';
+export function KanbanBoard({tasks=[]}){return <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">{TASK_STATUSES.map(status=><section key={status} className="rounded-2xl bg-slate-100/70 p-3"><div className="mb-3 flex justify-between px-1"><h3 className="text-sm font-bold">{status}</h3><span className="text-xs text-slate-400">{tasks.filter(t=>t.status===status).length}</span></div><div className="space-y-3">{tasks.filter(t=>t.status===status).map(t=><TaskCard key={t.id} task={t}/>)}</div></section>)}</div>;}

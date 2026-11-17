@@ -1,0 +1,1 @@
+export function MessageComposer({value,onChange,onSend}){return <form onSubmit={onSend} className="flex gap-2"><input className="form-input" value={value} onChange={e=>onChange(e.target.value)} placeholder="Write a message..."/><button className="rounded-lg bg-indigo-600 px-4 text-white">Send</button></form>;}

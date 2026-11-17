@@ -1,0 +1,1 @@
+export function MemberSelector({members=[],selected=[],onChange}){return <div className="max-h-48 space-y-2 overflow-auto">{members.map(m=><label key={m.id} className="flex items-center gap-2 text-sm"><input type="checkbox" checked={selected.includes(m.id)} onChange={e=>onChange(e.target.checked?[...selected,m.id]:selected.filter(id=>id!==m.id))}/>{m.name}</label>)}</div>;}

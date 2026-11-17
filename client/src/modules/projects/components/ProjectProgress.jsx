@@ -1,0 +1,1 @@
+export function ProjectProgress({value=0}){return <div><div className="h-2 rounded-full bg-slate-100"><div className="h-2 rounded-full bg-indigo-600" style={{width:`${Math.max(0,Math.min(100,value))}%`}}/></div><p className="mt-1 text-xs text-slate-500">{value}%</p></div>;}

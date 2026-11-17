@@ -1,0 +1,34 @@
+{
+  "name": "ptms-backend",
+  "version": "1.0.0",
+  "description": "Project Team Management System API",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "node --test",
+    "db:seed": "node src/database/seed.js",
+    "db:create-admin": "node src/database/create-admin.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "overrides": {
+    "nodemon": {
+      "minimatch": "^11.0.1"
+    }
+  }
+}

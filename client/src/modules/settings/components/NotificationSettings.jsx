@@ -1,0 +1,1 @@
+export function NotificationSettings({enabled,onChange}){return <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={enabled} onChange={e=>onChange(e.target.checked)}/> Enable notifications</label>;}

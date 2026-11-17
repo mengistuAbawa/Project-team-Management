@@ -1,0 +1,1 @@
+export function NotificationItem({item,onRead}){return <button onClick={onRead} className="block w-full p-4 text-left hover:bg-slate-50"><p className="font-semibold">{item.title}</p><p className="text-sm text-slate-500">{item.detail}</p></button>;}

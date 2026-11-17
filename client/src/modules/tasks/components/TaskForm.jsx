@@ -1,0 +1,1 @@
+export function TaskForm({value,onChange}){return <div className="space-y-2"><input className="form-input" placeholder="Task title" value={value.title||''} onChange={e=>onChange({...value,title:e.target.value})}/><input className="form-input" placeholder="Assignee" value={value.assignee||''} onChange={e=>onChange({...value,assignee:e.target.value})}/></div>;}

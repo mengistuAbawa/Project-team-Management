@@ -1,0 +1,6 @@
+import { useState } from 'react';
+import { Bell, CheckCheck } from 'lucide-react';
+import { PageHeader } from '../../../components/layout/PageHeader.jsx';
+import { Button } from '../../../components/ui/Button.jsx';
+import { demoNotifications } from '../../../data/mockData.js';
+export function NotificationsPage(){const [items,setItems]=useState(demoNotifications);const markAll=()=>setItems(items.map(i=>({...i,unread:false})));return <><PageHeader title="Notifications" description="Stay up to date with work across your workspace." actions={<Button variant="secondary" onClick={markAll}><CheckCheck size={16}/> Mark all read</Button>}/><div className="panel divide-y divide-slate-100">{items.map(item=><div key={item.id} className={`flex gap-4 p-5 ${item.unread?'bg-indigo-50/40':''}`}><div className="rounded-xl bg-indigo-100 p-3 text-indigo-700"><Bell size={18}/></div><div className="flex-1"><p className="text-sm font-semibold">{item.title}</p><p className="mt-1 text-sm text-slate-500">{item.detail}</p><p className="mt-2 text-xs text-slate-400">{item.time}</p></div>{item.unread&&<button onClick={()=>setItems(items.map(i=>i.id===item.id?{...i,unread:false}:i))} className="text-xs font-semibold text-indigo-600">Mark read</button>}</div>)}</div></>;}

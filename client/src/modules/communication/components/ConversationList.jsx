@@ -1,0 +1,1 @@
+export function ConversationList({items=[],onSelect}){return <div>{items.map(item=><button key={item.id} onClick={()=>onSelect(item)} className="block w-full p-3 text-left hover:bg-slate-50">{item.name}</button>)}</div>;}

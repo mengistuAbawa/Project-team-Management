@@ -1,0 +1,1 @@
+export function ProjectForm({value,onChange}){return <div className="space-y-3">{['name','client','dueDate','description'].map(key=><input key={key} className="form-input" placeholder={key} value={value[key]||''} onChange={e=>onChange({...value,[key]:e.target.value})}/>)}</div>;}

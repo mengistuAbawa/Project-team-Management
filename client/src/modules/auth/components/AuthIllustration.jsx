@@ -1,0 +1,1 @@
+export function AuthIllustration() { return <div className="rounded-2xl bg-indigo-50 p-6 text-indigo-800"><p className="font-bold">Your team, in sync.</p><p className="mt-1 text-sm">A shared space for plans, progress and collaboration.</p></div>; }

@@ -1,0 +1,1 @@
+export function MeetingCard({meeting}){return <article className="panel p-4"><h3 className="font-semibold">{meeting.title}</h3><p className="text-sm text-slate-500">{meeting.date} · {meeting.time}</p></article>;}

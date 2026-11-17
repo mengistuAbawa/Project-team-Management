@@ -1,0 +1,1 @@
+export function ReportsOverview({metrics=[]}){return <div className="grid gap-3 sm:grid-cols-3">{metrics.map(m=><div key={m.label} className="panel p-4"><p className="text-xs text-slate-500">{m.label}</p><p className="mt-1 text-2xl font-bold">{m.value}</p></div>)}</div>;}

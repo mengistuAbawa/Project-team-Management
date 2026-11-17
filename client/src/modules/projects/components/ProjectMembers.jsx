@@ -1,0 +1,1 @@
+export function ProjectMembers({members=[]}){return <div className="flex -space-x-2">{members.map((m)=><span key={m} title={m} className="grid h-8 w-8 place-items-center rounded-full border-2 border-white bg-indigo-100 text-[10px] font-bold text-indigo-700">{m.split(' ').map(x=>x[0]).join('').slice(0,2)}</span>)}</div>;}
