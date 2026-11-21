@@ -30,6 +30,8 @@ const HowItWorksPage = lazy(() => import('../pages/public/HowItWorksPage.jsx').t
 const RolesPage = lazy(() => import('../pages/public/RolesPage.jsx').then((module) => ({ default: module.RolesPage })));
 const ContactPage = lazy(() => import('../pages/public/ContactPage.jsx').then((module) => ({ default: module.ContactPage })));
 const RequestAccessPage = lazy(() => import('../pages/public/RequestAccessPage.jsx').then((module) => ({ default: module.RequestAccessPage })));
+const PrivacyPage = lazy(() => import('../pages/public/PrivacyPage.jsx').then((module) => ({ default: module.PrivacyPage })));
+const TermsPage = lazy(() => import('../pages/public/TermsPage.jsx').then((module) => ({ default: module.TermsPage })));
 const AdminPublicRequestsPage = lazy(() => import('../modules/users/pages/AdminPublicRequestsPage.jsx').then((module) => ({ default: module.AdminPublicRequestsPage })));
 
 export function AppRoutes() {
@@ -47,6 +49,8 @@ export function AppRoutes() {
         <Route path="/roles" element={<RolesPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/request-access" element={<RequestAccessPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
       </Route>
       <Route element={<ProtectedRoute />}>
         <Route element={<MainLayout />}>

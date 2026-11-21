@@ -21,6 +21,10 @@ export function PublicFooter() {
             <span className="public-footer-label">Get started</span>
             <Link to="/roles">User roles</Link><Link to="/request-access">Request access</Link><Link to="/contact">Contact</Link><Link to="/login">Sign in <ArrowRight size={14} /></Link>
           </div>
+          <div className="public-footer-links">
+            <span className="public-footer-label">Legal</span>
+            <Link to="/privacy">Privacy Policy</Link><Link to="/terms">Terms and Conditions</Link>
+          </div>
         </div>
         <div className="public-footer-bottom"><span>© {new Date().getFullYear()} PTMS. Built for better teamwork.</span><span>Secure, role-based workspace access</span></div>
       </div>

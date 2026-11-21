@@ -10,20 +10,14 @@ async function startServer() {
   let server;
 
   try {
-    // 1. Verify PostgreSQL connection
-    await db.query("SELECT 1");
-    logger.info("database_connected", {});
-
-    // 2. Create HTTP server using Express
+    // Keep HTTP available during database outages; readiness checks report DB status.
     server = http.createServer(app);
     server.requestTimeout = env.requestTimeoutMs;
     server.headersTimeout = Math.max(env.headersTimeoutMs, env.requestTimeoutMs + 1000);
     server.timeout = env.socketTimeoutMs;
 
-    // 3. Initialize Socket.IO
     initializeSocket(server);
 
-    // 4. Start HTTP server
     server.listen(env.port, () => {
       logger.info("server_started", {
         port: env.port,
@@ -32,7 +26,6 @@ async function startServer() {
       });
     });
 
-    // 5. Graceful shutdown
     let isShuttingDown = false;
 
     const shutdown = async (signal) => {

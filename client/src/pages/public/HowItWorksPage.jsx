@@ -18,7 +18,7 @@ export function HowItWorksPage() {
             {workflow.map((step, index) => (
               <article className="public-timeline-item" key={step}>
                 <span className="public-timeline-number">{String(index + 1).padStart(2, '0')}</span>
-                <div><span className="public-timeline-label">{['Workspace', 'Access', 'Planning', 'Organization', 'Delivery', 'Quality', 'Client review', 'Reporting'][index]}</span><h3>{step}</h3></div>
+                <div><span className="public-timeline-label">{['Organization setup', 'User management', 'Project creation', 'Project planning', 'Team formation', 'Task assignment', 'Task execution', 'Quality review', 'Client review', 'Project completion'][index]}</span><h3>{step.replace(/^[^-—]+[—-]\s*/, '')}</h3></div>
                 {index < workflow.length - 1 && <ArrowDown className="public-timeline-arrow" size={17} aria-hidden="true" />}
               </article>
             ))}

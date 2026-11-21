@@ -146,6 +146,9 @@
 .public-role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .public-role-card { min-height: 180px; padding: 21px; border: 1px solid #e8edf5; border-radius: 13px; background: white; }
 .public-role-card h3 { margin: 14px 0 6px; }
+.public-role-responsibilities { margin: 13px 0 0; padding: 0; list-style: none; }
+.public-role-responsibilities li { position: relative; padding: 5px 0 5px 13px; color: #64748b; font-size: 10px; line-height: 1.5; }
+.public-role-responsibilities li::before { position: absolute; top: 11px; left: 1px; width: 5px; height: 5px; border-radius: 50%; background: #0d9488; content: ""; }
 .public-role-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 11px; }
 .role-blue { background: #eff6ff; color: #2563eb; }.role-violet { background: #f5f3ff; color: #7c3aed; }.role-teal { background: #f0fdfa; color: #0d9488; }.role-amber { background: #fffbeb; color: #d97706; }.role-rose { background: #fff1f2; color: #e11d48; }.role-indigo { background: #eef2ff; color: #4f46e5; }
 .public-work-section { position: relative; overflow: hidden; background: #f8fafc; }
@@ -162,6 +165,21 @@
 .public-benefit-grid article { padding: 23px; border: 1px solid #e8edf5; border-radius: 13px; }
 .public-benefit-grid article > span { color: #2563eb; font-size: 10px; font-weight: 800; letter-spacing: .1em; }
 .public-benefit-grid h3 { margin-top: 12px; }
+.public-lifecycle { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.public-lifecycle-stage { position: relative; min-height: 160px; padding: 20px; border: 1px solid #e3eaf4; border-radius: 13px; background: white; }
+.public-lifecycle-stage > span { color: #2563eb; font-size: 10px; font-weight: 800; letter-spacing: .1em; }
+.public-lifecycle-stage h3 { margin: 18px 0 7px; color: #172554; font-size: 13px; }
+.public-lifecycle-stage p { margin: 0; color: #64748b; font-size: 10px; line-height: 1.7; }
+.public-faq-layout { display: grid; grid-template-columns: .72fr 1.28fr; align-items: start; gap: 10%; }
+.public-faq-title { margin: 12px 0 10px; color: #172554; font-size: clamp(28px, 3vw, 38px); letter-spacing: -.05em; line-height: 1.15; }
+.public-faq-copy { margin: 0; color: #64748b; font-size: 12px; line-height: 1.75; }
+.public-faq-list { border-top: 1px solid #e2e8f0; }
+.public-faq-item { border-bottom: 1px solid #e2e8f0; }
+.public-faq-item h3 { margin: 0; }
+.public-faq-item button { width: 100%; min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 15px; border: 0; padding: 12px 4px; background: transparent; color: #172554; text-align: left; font-size: 12px; font-weight: 750; }
+.public-faq-item button svg { flex: 0 0 auto; color: #64748b; transition: transform .18s ease; }
+.public-faq-item.is-open button svg { transform: rotate(180deg); }
+.public-faq-answer p { margin: -2px 30px 17px 4px; color: #64748b; font-size: 11px; line-height: 1.75; }
 .public-testimonials { background: #f8fafc; }
 .public-quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .public-quote-grid blockquote { margin: 0; padding: 23px; border: 1px solid #e8edf5; border-radius: 14px; background: white; }
@@ -242,7 +260,7 @@
 .public-optional { color: #94a3b8; font-size: 10px; font-weight: 500; }
 
 .public-footer { padding: 45px 0 0; border-top: 1px solid #e9eef5; background: #fff; }
-.public-footer-top { display: grid; grid-template-columns: 1.5fr .7fr .7fr; gap: 55px; padding-bottom: 34px; }
+.public-footer-top { display: grid; grid-template-columns: 1.5fr .7fr .7fr .7fr; gap: 55px; padding-bottom: 34px; }
 .public-footer-copy { max-width: 300px; margin: 14px 0 0; color: #64748b; font-size: 11px; line-height: 1.7; }
 .public-footer-links { display: flex; flex-direction: column; align-items: flex-start; gap: 11px; color: #64748b; font-size: 11px; }
 .public-footer-links a { display: inline-flex; align-items: center; gap: 4px; }
@@ -275,6 +293,8 @@
   .public-work-grid { gap: 8%; }
   .public-problem-grid, .public-value-grid { grid-template-columns: repeat(2, 1fr); }
   .public-contact-layout { gap: 25px; }
+  .public-lifecycle { grid-template-columns: repeat(2, 1fr); }
+  .public-faq-layout { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 620px) {
   .public-container { width: min(100% - 34px, 520px); }
@@ -315,6 +335,8 @@
   .public-work-list { margin-left: 3px; }
   .public-benefit-grid { gap: 11px; }
   .public-benefit-grid article { padding: 19px; }
+  .public-lifecycle { grid-template-columns: 1fr; }
+  .public-lifecycle-stage { min-height: auto; }
   .public-cta { padding: 43px 0; }
   .public-cta-content { align-items: flex-start; flex-direction: column; gap: 21px; }
   .public-page-hero { padding: 55px 0 50px; }
@@ -333,3 +355,40 @@
 @media (prefers-reduced-motion: reduce) {
   .public-site *, .public-site *::before, .public-site *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+.public-nav-link, .public-signin { font-size: 14px; font-weight: 700; }
+.public-nav-actions .public-button-small { font-size: 13px; }
+.public-eyebrow { font-size: 12px; }
+.public-button { font-size: 15px; font-weight: 800; }
+.public-hero-copy > p, .public-page-hero-inner > p { font-size: clamp(16px, 1.3vw, 18px); font-weight: 500; }
+.public-hero-trust { font-size: 13px; font-weight: 700; }
+.public-hero-caption { font-size: 10px; }
+.public-stat div > span { font-size: 12px; font-weight: 550; }
+.public-section-heading p { font-size: 15px; font-weight: 500; }
+.public-feature-card h3, .public-role-card h3, .public-benefit-grid h3 { font-size: 16px; font-weight: 800; }
+.public-feature-card p, .public-role-card p, .public-benefit-grid p { font-size: 14px; font-weight: 500; }
+.public-role-responsibilities li { font-size: 13px; font-weight: 500; }
+.public-work-copy, .public-objectives > div > p, .public-work-step p { font-size: 15px; font-weight: 500; }
+.public-work-step > span, .public-benefit-grid article > span, .public-lifecycle-stage > span { font-size: 12px; }
+.public-lifecycle-stage h3 { font-size: 15px; font-weight: 800; }
+.public-lifecycle-stage p, .public-faq-copy, .public-faq-answer p { font-size: 14px; font-weight: 500; }
+.public-faq-item button { font-size: 15px; font-weight: 800; }
+.public-quote-grid blockquote > p { font-size: 16px; font-weight: 500; }
+.public-quote-grid blockquote footer { font-size: 13px; }
+.public-cta p { font-size: 15px; font-weight: 500; }
+.public-about-intro > div:last-child p, .public-mission-card p, .public-problem-grid p, .public-value-grid p { font-size: 14px; font-weight: 500; }
+.public-problem-grid b, .public-value-grid h3 { font-size: 15px; font-weight: 800; }
+.public-objectives li, .public-timeline-item h3 { font-size: 14px; font-weight: 600; }
+.public-timeline-label { font-size: 11px; }
+.public-role-note, .public-contact-aside > p { font-size: 14px; font-weight: 500; }
+.public-contact-info b { font-size: 14px; font-weight: 800; }
+.public-contact-info p, .public-no-endpoint { font-size: 13px; font-weight: 500; }
+.public-text-link { font-size: 14px; }
+.public-form label { font-size: 13px; font-weight: 750; }
+.public-form input, .public-form select, .public-form textarea { min-height: 48px; font-size: 15px; }
+.public-form-notice { font-size: 14px; font-weight: 500; }
+.public-form-footnote { font-size: 12px; }
+.public-optional { font-size: 12px; }
+.public-footer-copy, .public-footer-links { font-size: 13px; }
+.public-footer-label { font-size: 14px; font-weight: 800; }
+.public-footer-bottom { font-size: 11px; }

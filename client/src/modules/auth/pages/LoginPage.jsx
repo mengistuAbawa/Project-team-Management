@@ -32,7 +32,7 @@ export function LoginPage() {
           <span className="grid h-10 w-10 place-items-center rounded-xl bg-indigo-600 text-white shadow-lg shadow-blue-600/20">
             <BriefcaseBusiness size={19} />
           </span>
-          <span className="text-base font-extrabold tracking-tight text-slate-900">TeamFlow</span>
+          <span className="text-base font-extrabold tracking-tight text-slate-900">PTMS</span>
         </div>
         <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700">
           <ShieldCheck size={14} />

@@ -11,6 +11,8 @@ const publicPaths = [
   '/roles',
   '/contact',
   '/request-access',
+  '/privacy',
+  '/terms',
 ];
 
 function seoAssets(siteUrl) {
